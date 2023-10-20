@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Events</title>
+</head>
+<style>
+    #btn{
+        padding: 0.7rem;
+        outline: none;
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <button id="btn" style="cursor: pointer;">Change Color</button>
+</body>
+
+<script>
+const btn = document.querySelector("#btn");
+
+// Now create a random number 
+function randomNumber(number){
+    return Math.floor(Math.random() * (number+1));
+}
+// changing color of body
+btn.addEventListener('click',() =>{
+    randomColor = `rgb(${randomNumber(255)},${randomNumber(255)},${randomNumber(255)})`;
+    document.body.style.backgroundColor = randomColor;
+})
+// if we want to change the color of button we have to use e.target
+const changeBtnColor = (e) =>{
+    randomColor = `rgb(${randomNumber(255)},${randomNumber(255)},${randomNumber(255)})`;
+    e.target.style.backgroundColor = randomColor
+}
+
+
+btn.addEventListener('click',changeBtnColor)
+
+
+
+
+</script>
+</html>
