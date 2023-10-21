@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+    <style>
+        body{
+            background: #2c2b2b;
+            color: azure;
+        }
+        .async img{
+            border-radius: 50%;
+            height: 14rem;
+        }
+        .async img:hover{
+            opacity: 0.5;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="time"></h2>
+        <p class="demo"></p>
+    </div>
+    <div class="async">
+        <h2>Api Practice</h2>
+        <p class="github-name"></p>
+        <img  id="avatar">
+
+    </div>
+    <script>
+        const currentTime = document.querySelector('.time')
+        setInterval(()=>{
+            let time = new Date()
+            currentTime.innerHTML = `${time.toLocaleTimeString()}`
+        },1000)
+
+        const demo = document.querySelector('.demo')
+        setTimeout(() => {
+            demo.innerHTML = "hello I have been executed after 3 seconds using setTimeout"
+        }, 3000);
+
+    </script>
+    <script src="14_asynchronous.js">
+    </script>
+</body>
+</html>
